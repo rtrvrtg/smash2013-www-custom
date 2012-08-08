@@ -1,11 +1,13 @@
 name = SMASH Guests
 core = 7.x
 package = SMASH!
+php = 5.2.4
 version = 7.x-0.1
 project = smash_guests
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference
+dependencies[] = image
 dependencies[] = link
 dependencies[] = page_manager
 dependencies[] = smash_news
