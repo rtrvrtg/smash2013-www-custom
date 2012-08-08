@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH News feature.
+ */
+
+include_once 'smash_news.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function smash_news_theme($existing, $type, $theme, $path) { 
+  
+	$module_path = drupal_get_path('module', 'smash_news');
+	
+	$themes['views_view_unformatted__news__list_topics'] = array(
+		'template'	  => 'views-view-unformatted--news--list-topics',
+		'path'        => $module_path . '/templates',
+		'base hook'   => 'views_view_unformatted',
+		'type'	      => 'module',
+		'theme_path'	=> $module_path,
+		'preprocess functions' => array(
+		  'template_preprocess',
+      'template_preprocess_views_view_unformatted',
+      'mymodule_preprocess_views_view_unformatted__news__list_topics'
+    )
+	);
+	
+	$themes['views_view_unformatted__news__list_dates'] = array(
+		'template'	  => 'views-view-unformatted--news--list-dates',
+		'path'        => $module_path . '/templates',
+		'base hook'   => 'views_view_unformatted',
+		'type'	      => 'module',
+		'theme_path'	=> $module_path,
+		'preprocess functions' => array(
+		  'template_preprocess',
+      'template_preprocess_views_view_unformatted',
+      'mymodule_preprocess_views_view_unformatted__news__list_dates'
+    )
+	);
+
+  /*
+	$themes['views_view_fields__myview'] = array(
+		'template'	  => 'views-view-fields--myview',
+		'path'        => $module_path . '/templates',
+		'base hook'   => 'views_view_fields',
+		'type'	      => 'module',
+		'theme_path'	=> $module_path,
+		'preprocess functions' => array(
+		  'template_preprocess',
+      'template_preprocess_views_view_fields',
+      'mymodule_preprocess_views_view_fields__myview'
+    )
+	);
+	*/
+	
+  return $themes;
+}

@@ -1,0 +1,6 @@
+name = SMASH Custom Views Handlers
+core = 7.x
+package = SMASH!
+version = 7.x-0.1
+dependencies[] = views
+files[] = views_handlers.inc
